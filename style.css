@@ -10,7 +10,6 @@
     background-color:#FFFFFF;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     z-index: 2;
     top: 0px;
@@ -19,6 +18,8 @@
 .login img{
     width: 130px;
     height: 92px;
+    margin-top: 72px;
+    margin-bottom: 94px;
 }
 .login input{
     background: #FFFFFF;
@@ -50,7 +51,8 @@
     color: #696969;
     justify-content: center;
     margin-right: auto;
-    margin-left: auto; 
+    margin-left: auto;
+    margin-top: 15px; 
 }
 .cabeça{
 position: fixed;
@@ -96,9 +98,11 @@ height: 53px;
     color: #000000;
     margin-left: 17px; 
     margin-right: auto;
-    margin-left: auto;   
+    margin-left: auto;
+    box-shadow: 0 0 0 0;
+    outline: 0;   
 }
-.display button{
+.button{
     background-image: url('imagens/paper-plane-outline\(1\).svg');
     width: 30px;
     height: 30px;
