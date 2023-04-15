@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 .body{
     position: relative ;
-    scrollbar: ;
 }
 .login{
     position: fixed;
@@ -66,12 +65,17 @@ box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
 justify-content: space-between;
 align-items: center;
 display: flex;
-padding-left: 5px;
-padding-right: 80px;
+
 }
 .logo{
 width: 75px;
-height: 53px; 
+height: 53px;
+margin-left: 12px;
+margin-right: 12px; 
+}
+.comu{
+    Width:42px;
+    height:31px
 }
 .display{
     position: fixed;
@@ -100,8 +104,9 @@ height: 53px;
     margin-left: 17px; 
     margin-right: auto;
     margin-left: auto;
+    outline: 0;
     box-shadow: 0 0 0 0;
-    outline: 0;   
+    border: 0 none;   
 }
 .button{
     background-image: url('imagens/paper-plane-outline\(1\).svg');
@@ -111,7 +116,7 @@ height: 53px;
     margin-left: auto;
 }
 .bate-papo{
-    margin-top: 81px;
+    margin-top: 107px;
     margin-bottom: 81px;
     height: 100vh;
     width: 100vw;
@@ -128,7 +133,8 @@ display: flex;
 align-items: center;
 color: #AAAAAA;
 background-color: red;
-margin: 2px;
+margin-top: 2px;
+margin-bottom: 2px;
 }
 .contatos_menu{
 position: absolute;

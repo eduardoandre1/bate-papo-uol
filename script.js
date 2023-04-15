@@ -1,18 +1,16 @@
 axios.defaults.headers.common['Authorization'] = 'CXsWjs5oIZPtLIyHNdgCzRAl';
-let user = ""
-let servidor = ''
+let user = null
+//login e entrar no servidor
 function alertarresposta(resposta){
     const status1 = resposta.status
     const user_name = document.getElementById('user_name')
     if(status1 === 200){
         const login = document.querySelector('.login')
         login.classList.add('disableclass')
-        return true
     }
-    else if(status1 ===400){
-        alert('outro usuario já esta usando este nome')
-        user_name.innerHTML = ''
-        return false 
+    else{
+        console.log('outro usuario já esta usando este nome')   
+        user_name.innerHTML = '' 
     }
 }
 function entrar(){
@@ -26,3 +24,16 @@ function entrar(){
         user_name1.innerHTML = ''
     }
 }
+//manter online
+const conferironline = (resposta) =>{
+    console.log('enviou')
+    console.log(resposta)
+}
+const manteronline = ()=>{
+    let user_request = axios.post('https://mock-api.driven.com.br/api/vm/uol/status',user)
+    user_request.then(conferironline)
+}
+setInterval(manteronline,5000)
+//enviar mensagem
+
+//carregar mensagens
