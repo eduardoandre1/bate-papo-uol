@@ -28,10 +28,17 @@ function entrar(){
 const conferironline = (resposta) =>{
     console.log('online')
 }
+const logoff = (resposta) =>{
+    alert('você esta deslogado')
+    user = null;
+    const login = document.querySelector('.login')
+    login.classList.remove('disableclass')
+}
 const manteronline = ()=>{
     if(user !== null){
         let user_request = axios.post('https://mock-api.driven.com.br/api/vm/uol/status',user)
         user_request.then(conferironline)
+        user_request.catch(logoff)
     }
 }
     
@@ -52,6 +59,7 @@ function send(){
     const send = axios.post('https://mock-api.driven.com.br/api/vm/uol/messages',envio)
     send.then(generete_text)
     mensager.value = ''
+    carregar_chat()
 }
 
 //carregar mensagens
