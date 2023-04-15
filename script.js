@@ -30,10 +30,20 @@ const conferironline = (resposta) =>{
     console.log(resposta)
 }
 const manteronline = ()=>{
-    let user_request = axios.post('https://mock-api.driven.com.br/api/vm/uol/status',user)
-    user_request.then(conferironline)
-}
+    if(user !== null){
+        let user_request = axios.post('https://mock-api.driven.com.br/api/vm/uol/status',user)
+        user_request.then(conferironline)
+    }
+    }
+    
 setInterval(manteronline,5000)
+
 //enviar mensagem
+
+function send(){
+    const mensager = document.getElementById('mensager')
+    
+
+}
 
 //carregar mensagens
