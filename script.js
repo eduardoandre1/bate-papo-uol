@@ -26,26 +26,23 @@ function entrar(){
 }
 //manter online
 const conferironline = (resposta) =>{
-    console.log('enviou')
-    console.log(resposta)
+    console.log('online')
 }
 const manteronline = ()=>{
     if(user !== null){
         let user_request = axios.post('https://mock-api.driven.com.br/api/vm/uol/status',user)
         user_request.then(conferironline)
     }
-    }
+}
     
-//setInterval(manteronline,5000)
+setInterval(manteronline,5000)
 
 //enviar mensagem
 function generete_text(resposta){
-    console.log(resposta)
     console.log('texto enviado') 
 }
 function send(){
     const mensager = document.getElementById('mensager')
-    alert(mensager.value)
     const envio = {
         from : user.name,
         to : 'everyone',
@@ -54,8 +51,29 @@ function send(){
     }
     const send = axios.post('https://mock-api.driven.com.br/api/vm/uol/messages',envio)
     send.then(generete_text)
-    alert(mensager)
-    mensager.innerHTML = ''
+    mensager.value = ''
 }
 
 //carregar mensagens
+function criar_text(data){
+    const bate_papo = document.querySelector('.bate-papo')
+    bate_papo.innerHTML += `<div class="mensagem" data-test="message"> (${data.time}) ${data.from} para ${data.to}: ${data.text} </div>`
+    console.log(data)
+}
+function data_chat(resposta){
+    const bate_papo = document.querySelector('.bate-papo')
+    bate_papo.innerHTML = ''
+    const array = resposta.data
+    array.forEach(criar_text);
+
+}
+function carregar_chat(){
+    const bate_papo = document.querySelector('.bate-papo')
+    if(user !== null){
+        const receber = axios.get('https://mock-api.driven.com.br/api/vm/uol/messages')
+        receber.then(data_chat)
+    }
+}
+setInterval(carregar_chat,3000)
+carregar_chat()
+//criar_text('bom dia linda')

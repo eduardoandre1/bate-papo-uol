@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 .body{
     position: relative ;
+    background: #E5E5E5;
 }
 .login{
     position: fixed;
@@ -118,8 +119,9 @@ margin-right: 12px;
 .bate-papo{
     margin-top: 107px;
     margin-bottom: 81px;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
+    background: #E5E5E5;
 }
 .mensagem{
 width: 100vw;
@@ -132,9 +134,10 @@ line-height: 16px;
 display: flex;
 align-items: center;
 color: #AAAAAA;
-background-color: red;
 margin-top: 2px;
 margin-bottom: 2px;
+background: #FFFFFF;
+border-radius: 2px;
 }
 .contatos_menu{
 position: absolute;
