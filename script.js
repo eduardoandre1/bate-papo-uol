@@ -36,14 +36,26 @@ const manteronline = ()=>{
     }
     }
     
-setInterval(manteronline,5000)
+//setInterval(manteronline,5000)
 
 //enviar mensagem
-
+function generete_text(resposta){
+    console.log(resposta)
+    console.log('texto enviado') 
+}
 function send(){
     const mensager = document.getElementById('mensager')
-    
-
+    alert(mensager.value)
+    const envio = {
+        from : user.name,
+        to : 'everyone',
+        text: mensager.value,
+        type: "message"
+    }
+    const send = axios.post('https://mock-api.driven.com.br/api/vm/uol/messages',envio)
+    send.then(generete_text)
+    alert(mensager)
+    mensager.innerHTML = ''
 }
 
 //carregar mensagens
