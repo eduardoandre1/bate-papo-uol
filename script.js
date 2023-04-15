@@ -47,6 +47,7 @@ setInterval(manteronline,5000)
 //enviar mensagem
 function generete_text(resposta){
     console.log('texto enviado') 
+    carregar_chat()
 }
 function send(){
     const mensager = document.getElementById('mensager')
@@ -58,8 +59,8 @@ function send(){
     }
     const send = axios.post('https://mock-api.driven.com.br/api/vm/uol/messages',envio)
     send.then(generete_text)
+    send.catch(logoff)
     mensager.value = ''
-    carregar_chat()
 }
 
 //carregar mensagens
