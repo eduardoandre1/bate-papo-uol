@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 .body{
     position: relative ;
-    background: #E5E5E5;
+    background: red;
 }
 .login{
     position: fixed;
@@ -72,11 +72,23 @@ display: flex;
 width: 75px;
 height: 53px;
 margin-left: 12px;
-margin-right: 12px; 
+margin-right: 12px;
+outline: 0;
+box-shadow: 0 0 0 0;
+border: 0 none;
+border:none!important;
+background: #FFFFFF;
+
 }
-.comu{
+.comunity{
     Width:42px;
-    height:31px
+    height:31px;
+    margin-left: 12px;
+    margin-right: 12px;
+    outline: 0;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    background: #FFFFFF;
 }
 .display{
     position: fixed;
@@ -123,6 +135,11 @@ margin-right: 12px;
     width: 100vw;
     background: #E5E5E5;
 }
+.corpo{
+    background: #E5E5E5;
+    height: 100%;
+    width: 100%;
+}
 .mensagem{
 width: 100vw;
 height: 40px;
@@ -144,7 +161,7 @@ position: absolute;
 width: 259px;
 height: 667px;
 right: 0px;
-top: -1px;
+top: 0px;
 background: #FFFFFF;
 }
 .disableclass{

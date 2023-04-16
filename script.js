@@ -17,15 +17,15 @@ function login(resposta){
 }
 
 function entrar(){
-    const user_name1 = document.getElementById('user_name')
-    if(user_name1.value !== ""){
+    const user_name = document.getElementById('user_name')
+    if(user_name.value !== ""){
         user = {name:user_name.value}
         let user_request = axios.post('https://mock-api.driven.com.br/api/vm/uol/participants ',user)
         user_request.then(login)
         user_request.catch(user_block)
     }else{
         alert("por favor ,digite algum nome para se identificar")
-        user_name1.innerHTML = '23'
+        user_name.innerHTML = ''
     }
 }
 //manter online
@@ -69,7 +69,7 @@ function send(){
 //carregar mensagens
 function criar_text(data){
     const bate_papo = document.querySelector('.bate-papo')
-    bate_papo.innerHTML += `<div class="mensagem" data-test="message"> (${data.time}) ${data.from} para ${data.to}: ${data.text} </div>`
+    bate_papo.innerHTML += `<div class="mensagem" data-test="message">     (${data.time}) ${data.from} para ${data.to}: ${data.text} </div>`
     console.log(data)
 }
 function data_chat(resposta){
@@ -88,3 +88,8 @@ function carregar_chat(){
 }
 setInterval(carregar_chat,3000)
 carregar_chat()
+document.addEventListener('keypress',function(e){
+    if(e.key === 'Enter' && user != null){
+        send()
+    }
+})
